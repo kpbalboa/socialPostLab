@@ -7,10 +7,11 @@ import { Post } from "../post";
   styleUrls: ["./social-post.component.css"]
 })
 export class SocialPostComponent implements OnInit {
+  showForm: boolean = false;
   posts: Post[] = [
     {
       title: "test",
-      thought: "this is a test"
+      thought: "this is a test dope"
     },
     {
       title: "test",
@@ -21,10 +22,15 @@ export class SocialPostComponent implements OnInit {
 
   ngOnInit() {}
 
-  addPost() {
-    this.posts.push();
+  onAddHandler(newPost: Post): void {
+    this.posts.push(newPost);
+    this.toggleForm();
+    console.log(this.posts);
   }
-  deletePost() {
-    this.posts.splice(1, 1);
+  onDeletePost(index): void {
+    this.posts.splice(index, 1);
+  }
+  toggleForm(): void {
+    this.showForm = !this.showForm;
   }
 }

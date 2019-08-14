@@ -1,4 +1,12 @@
 <p>My thoughts</p>
-<span (click)="test()">New thought</span>
-
-<post [post]="post" *ngFor="let post of posts; index as i"> </post>
+<app-post-form *ngIf="showForm" (onAdd)="onAddHandler($event)"  class="blue"></app-post-form>
+<button *ngIf="!showForm" (click)="toggleForm()" class="white">New thought</button>
+<div *ngIf="!showForm" class="white">
+<post 
+*ngFor="let post of posts; index as i"  
+[post]="post" 
+[index]="i"
+(delete)="onDeletePost($event)"
+>
+ </post>
+</div>

@@ -1,5 +1,7 @@
-<div>
+<div class="item">
+  <div class="left">
   <h1>{{ post.title }}</h1>
   <p>{{ post.thought }}</p>
-  <button (click)="deletePost()">x</button>
+  </div>
+  <button (click)="deletePost(index)">x</button>
 </div>

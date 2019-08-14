@@ -1,1 +1,7 @@
-<p>post-form works!</p>
+<form #postForm="ngForm" (ngSubmit)="addPost(postForm)">
+Title 
+<input type="text" placeholder="Title" name="title" id="title" ngModel class="white"/>
+Thought
+<input type="text" name="thought" id="thought" ngModel class="white box"/>
+<button class="white">Add Post</button>
+</form>

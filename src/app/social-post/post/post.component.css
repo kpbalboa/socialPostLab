@@ -1,0 +1,6 @@
+.item{
+  display: flex;  
+}
+.left{
+    flex:1;
+}
